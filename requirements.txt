@@ -1,0 +1,11 @@
+# API and Environment
+openai
+python-dotenv
+
+# Data Handling
+datasets
+pandas
+tqdm
+
+# Utilities
+argparse
