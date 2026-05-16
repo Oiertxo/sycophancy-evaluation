@@ -1,2 +1,6 @@
 venv
 .env
+.envrc
+data/logs
+.direnv
+.vscode
