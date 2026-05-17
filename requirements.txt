@@ -6,6 +6,10 @@ python-dotenv
 datasets
 pandas
 tqdm
+numpy
+scipy
 
 # Utilities
-argparse
+seaborn
+matplotlib
+ipykernel

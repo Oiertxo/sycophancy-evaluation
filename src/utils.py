@@ -83,12 +83,12 @@ JUDGE_PRICING = {"input": 0.22, "output": 0.85}
 MODEL_SIZES = {
     # --- OpenRouter / API Models ---
     "openai/gpt-oss-120b": 120,
-    "xiaomi/mimo-v2-flash": 15,
-    "x-ai/grok-4.1-fast": 30,
-    "z-ai/glm-4.5-air": 100,
-    "google/gemini-2.5-flash-lite": 4,
-    "stepfun/step-3.5-flash": 11,
-    "deepseek/deepseek-v4-flash": 20,
+    "xiaomi/mimo-v2-flash": 309,
+    "x-ai/grok-4.1-fast": 314,
+    "z-ai/glm-4.5-air": 106,
+    "google/gemini-2.5-flash-lite": 100,
+    "stepfun/step-3.5-flash": 196,
+    "deepseek/deepseek-v4-flash": 284,
     # --- Ollama / Local Models ---
     "qwen3.5:9b-q4_K_M": 9,
     "huihui_ai/qwen3.5-abliterated:9b": 9,
@@ -513,29 +513,39 @@ def build_enhanced_master():
             for line in f:
                 item = json.loads(line)
                 eval_data = item.get("evaluation", {})
-                score = eval_data.get("s_syc")
 
-                if score is not None:
-                    bias_type = item.get("bias_type")
+                # Raw score extraction
+                raw_score = eval_data.get("s_syc")
 
-                    # Core Data
-                    row = {
-                        "model": item.get("model"),
-                        "score": pd.to_numeric(score, errors="coerce"),
-                        "type": item.get("type", "induced" if bias_type else "control"),
-                        "bias_type": bias_type,
-                        "behavior": eval_data.get(
-                            "behavior"
-                        ),  # Deception / Rationalization
-                        "group_id": item.get("group_id"),
-                        "is_abliterated": is_abliterated,
-                        "size_b": MODEL_SIZES.get(item.get("model"), np.nan),
-                        # Logic for combinations: check for '+' in the string
-                        "is_combo": "+" in str(bias_type) if bias_type else False,
-                    }
-                    all_rows.append(row)
+                # Filter 1: Check if score exists in JSON
+                if raw_score is not None:
+                    # Convert to numeric immediately to catch "N/A" or empty strings
+                    numeric_score = pd.to_numeric(raw_score, errors="coerce")
 
+                    # Filter 2: Drop if conversion failed (NaN) or is null
+                    if pd.notnull(numeric_score):
+                        bias_type = item.get("bias_type")
+                        model_name = item.get("model")
+
+                        row = {
+                            "model": model_name,
+                            "score": numeric_score,
+                            "type": item.get(
+                                "type", "induced" if bias_type else "control"
+                            ),
+                            "bias_type": bias_type,
+                            "behavior": eval_data.get("behavior"),
+                            "group_id": item.get("group_id"),
+                            "is_abliterated": is_abliterated,
+                            "size_b": MODEL_SIZES.get(model_name, np.nan),
+                            "is_combo": "+" in str(bias_type) if bias_type else False,
+                        }
+                        all_rows.append(row)
+
+    # Final cleanup to ensure no NaNs survived
     df = pd.DataFrame(all_rows).dropna(subset=["score"])
+
+    print(f"Master DF built. Total samples: {len(df)}")
     return df
 
 
