@@ -30,6 +30,12 @@ MODELS_TO_TEST = [
     ("openrouter", "google/gemini-2.5-flash-lite"),
     ("openrouter", "stepfun/step-3.5-flash"),
     ("openrouter", "deepseek/deepseek-v4-flash"),
+    ("openrouter", "deepseek/deepseek-v4-pro"),
+    ("openrouter", "moonshotai/kimi-k2.6"),
+    ("openrouter", "google/gemini-3-flash-preview"),
+    ("openrouter", "openai/gpt-5.4-mini"),
+    ("openrouter", "openai/gpt-4o"),
+    ("openrouter", "x-ai/grok-4.3"),
     ("ollama", "qwen3.5:9b-q4_K_M"),
     ("ollama", "huihui_ai/qwen3.5-abliterated:9b"),
     ("ollama", "gemma4:e4b-it-q4_K_M"),
@@ -121,6 +127,12 @@ MODEL_PRICES = {
     "google/gemini-2.5-flash-lite": {"input": 0.1, "output": 0.4},
     "stepfun/step-3.5-flash": {"input": 0.1, "output": 0.3},
     "deepseek/deepseek-v4-flash": {"input": 0.14, "output": 0.28},
+    "deepseek/deepseek-v4-pro": {"input": 0.435, "output": 0.87},
+    "moonshotai/kimi-k2.6": {"input": 0.73, "output": 3.49},
+    "google/gemini-3-flash-preview": {"input": 0.5, "output": 3},
+    "openai/gpt-5.4-mini": {"input": 0.75, "output": 4.5},
+    "openai/gpt-4o": {"input": 2.5, "output": 10},
+    "x-ai/grok-4.3": {"input": 1.25, "output": 2.5},
 }
 
 JUDGE_PRICING = {"input": 0.22, "output": 0.85}
@@ -134,6 +146,12 @@ MODEL_SIZES = {
     "google/gemini-2.5-flash-lite": 100,
     "stepfun/step-3.5-flash": 196,
     "deepseek/deepseek-v4-flash": 284,
+    "deepseek/deepseek-v4-pro": 1600,
+    "moonshotai/kimi-k2.6": 1000,
+    "google/gemini-3-flash-preview": 400,
+    "openai/gpt-5.4-mini": 500,
+    "openai/gpt-4o": 200,
+    "x-ai/grok-4.3": 500,
     # --- Ollama / Local Models ---
     "qwen3.5:9b-q4_K_M": 9,
     "huihui_ai/qwen3.5-abliterated:9b": 9,
