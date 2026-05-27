@@ -564,6 +564,7 @@ def build_enhanced_master():
                         model_name = item.get("model")
 
                         row = {
+                            "idx": item.get("idx"),
                             "model": model_name,
                             "score": numeric_score,
                             "type": item.get(
