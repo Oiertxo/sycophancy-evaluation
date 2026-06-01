@@ -131,8 +131,6 @@ MODEL_SIZES = {
     "gpt-oss:20b": 20,
     "huihui_ai/gpt-oss-abliterated:20b": 20,
     "gpt-oss-jailbreak:20b": 20,
-    # Legacy / Others
-    "rnj-1:8b": 8,
 }
 
 load_dotenv()
