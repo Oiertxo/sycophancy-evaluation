@@ -22,20 +22,20 @@ The project layout separates experimental logic, analytical notebooks, data stre
 
 ```text
 sycophancy-evaluation/
-├── data/                        # Raw datasets and processed model responses
-├── dead_ends/                   # Discarded test cycles and edge-case research
-├── images/                      # Diagrams and web application assets
+├── data/                # Raw datasets and processed model responses
+├── dead_ends/           # Discarded test cycles and edge-case research
+├── images/              # Diagrams and web application assets
 ├── src/
-│   └── logger.py                # Logging functions
-│   └── utils.py                 # Core helper functions, APIs, and constants
-├── .env.example                 # Template for environment variables (API keys)
-├── .gitignore                   # Excluded environments, data sheets, and credentials
-├── LICENSE                      # Project distribution license
-├── README.md                    # Main documentation file
-├── app.py                       # Interactive Streamlit data visualization web app
-├── dataset.ipynb                # Notebook for exploratory data analysis (EDA)
-├── execution.ipynb              # Main experimental execution and evaluation pipeline
-└── results.ipynb                # Notebook generating final statistical plots and charts (in spanish)
+│   └── logger.py        # Logging functions
+│   └── utils.py         # Core helper functions, APIs, and constants
+├── .env.example         # Template for environment variables (API keys)
+├── .gitignore           # Excluded environments, data sheets, and credentials
+├── LICENSE              # Project distribution license
+├── README.md            # Main documentation file
+├── app.py               # Interactive Streamlit data visualization web app
+├── dataset.ipynb        # Notebook for exploratory data analysis (EDA)
+├── execution.ipynb      # Main experimental execution and evaluation pipeline
+└── results.ipynb        # Notebook generating final statistical plots and charts (in spanish)
 ```
 ---
 
