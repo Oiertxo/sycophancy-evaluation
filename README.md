@@ -1,8 +1,6 @@
 # Sycophancy Evaluation in Large Language Models
 
-![Python Version](https://img.shields.io/badge/python-3.14+-blue?logo=python&logoColor=white&style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
-![Framework](https://img.shields.io/badge/infrastructure-Ollama%20%7C%20OpenRouter-orange?style=flat-square)
+[![Python Version](https://img.shields.io/badge/python-3.14+-blue?logo=python&logoColor=white&style=flat-square)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Ollama](https://img.shields.io/badge/Ollama-local_inference-333333?logo=ollama&logoColor=white&style=flat-square)](https://ollama.com/) [![OpenRouter](https://img.shields.io/badge/OpenRouter-cloud_API-4F46E5?logo=openrouter&logoColor=white&style=flat-square)](https://openrouter.ai/)
 
 This repository contains the experimental framework, dataset, and codebase developed to evaluate, quantify, and characterize **sycophancy** and bias rationalization in state-of-the-art Large Language Models (LLMs). 
 
