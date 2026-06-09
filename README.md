@@ -1,5 +1,9 @@
 # Sycophancy Evaluation in Large Language Models
 
+![Python Version](https://img.shields.io/badge/python-3.14+-blue?logo=python&logoColor=white&style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+![Framework](https://img.shields.io/badge/infrastructure-Ollama%20%7C%20OpenRouter-orange?style=flat-square)
+
 This repository contains the experimental framework, dataset, and codebase developed to evaluate, quantify, and characterize **sycophancy** and bias rationalization in state-of-the-art Large Language Models (LLMs). 
 
 The project implements an automated architecture powered by the **LLM-as-a-Judge** paradigm to analyze how distinct cognitive biases—both isolated and combined—affect the neutrality and assertiveness of open-weight and proprietary language models.
@@ -13,6 +17,18 @@ The project implements an automated architecture powered by the **LLM-as-a-Judge
 * **Automated Evaluation Pipeline:** End-to-end processing from sequential prompt injection to automated evaluation and metric logging.
 * **Statistical Validation Suite:** Built-in statistical tests (Shapiro-Wilk, Wilcoxon signed-rank, Spearman's rank correlation, and Chi-Squared) to validate behavioral trends.
 * **Interactive Visualization Dashboard:** A built-in Streamlit web application for granular dataset exploration and analysis.
+
+---
+
+## 📦 Dataset & Base Corpus
+
+The experimental evaluation is built upon the foundational dataset:
+
+[![GitHub - DailyDilemmas](https://img.shields.io/badge/Base_Corpus-DailyDilemmas-blue?logo=github&style=flat-square)](https://github.com/layer6ai-labs/DailyDilemmas)
+
+**DailyDilemmas** is a balanced corpus of 1,360 ambiguous moral and professional dilemmas introduced by [Chiu et al. (2024)](https://arxiv.org/abs/2410.02683). 
+
+For this project, a curated subset of 30 core dilemmas was selected. Each dilemma was manually expanded into 20 asymmetric variations by injecting four distinct cognitive biases (Authority, Emotional, Minimization, and Social) along with their binary combinations across both potential decision stances. This methodology establishes a strict, symmetric benchmark of 630 evaluation instances.
 
 ---
 
