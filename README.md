@@ -35,7 +35,7 @@ sycophancy-evaluation/
 ├── app.py               # Interactive Streamlit data visualization web app
 ├── dataset.ipynb        # Notebook for exploratory data analysis (EDA)
 ├── execution.ipynb      # Main experimental execution and evaluation pipeline
-└── results.ipynb        # Notebook generating final statistical plots and charts (in spanish)
+└── results.ipynb        # Notebook generating statistical plots and charts (in spanish)
 ```
 ---
 
